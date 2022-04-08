@@ -7,25 +7,24 @@ function getNumber() {
 
     numero = parseInt(numero);
 
-    console.log(numero)
-
     if (!numero) {
         alert("Numero invalido");
         alert("Insira um numero valido !")
         getNumber();
     }
 
-    if (numero > 14) {
-        alert("Insira um numero menor que 14");
+    if (numero > 14 || numero <= 3) {
+        alert("Insira um numero maior que 4 menor que 14");
         getNumber();
     }
 
     if ((numero % 2) == 0) {
-        numberCards = number
-        generatedCards(numberCards);
+        generatedCards(numero);
     }
 }
 
 function generatedCards(numCards) {
-
+    for (var i = 0; i < numCards; i++) {
+        console.log(i)
+    }
 }
