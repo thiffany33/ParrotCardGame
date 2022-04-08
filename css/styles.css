@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500;700;900&display=swap');
+:root {
+    --green-100: #EEF9BF;
+    --green-200: #A7E9AF;
+    --green-300: #99CEA8;
+    --green-400: #75B79E;
+}
+
+* {
+    background-color: var(--green-100);
+}
+
+h1 {
+    color: var(--green-400);
+    font-size: 63px;
+    font-family: Roboto;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
