@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500;700;900&display=swap");
 :root {
-    --green-100: #EEF9BF;
-    --green-200: #A7E9AF;
-    --green-300: #99CEA8;
-    --green-400: #75B79E;
+    --green-100: #eef9bf;
+    --green-200: #a7e9af;
+    --green-300: #99cea8;
+    --green-400: #75b79e;
 }
 
 * {
@@ -14,12 +14,32 @@ h1 {
     color: var(--green-400);
     font-size: 63px;
     font-family: Roboto;
+    margin-bottom: 13px;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+.containerCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-200);
+    width: 117px;
+    height: 146px;
+    margin: 34px;
+    border: 1px solid var(--green-300);
+    border-radius: 5px;
+}
+
+.containerCards img {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
 }
