@@ -1,5 +1,6 @@
 var teste = [];
 var acertos = 0;
+var jogadas = 0;
 let items = [{
         id: 1,
         imageUrl: "/assets/gifs/bobrossparrot.gif",
@@ -110,6 +111,7 @@ function comparador() {
 }
 
 function selectedCard(index) {
+    jogadas++;
     if (cardselected1 == null) {
         cardselected1 = document.getElementById(index);
         cardselected1.classList.add("selected");
@@ -142,6 +144,6 @@ function resetCardsSelectedsErro() {
 function winGame() {
     acertos++;
     if (acertos == cardsLimit / 2) {
-        alert("Você ganhou!");
+        alert("Você ganhou em " + jogadas + " jogadas!");
     }
 }
