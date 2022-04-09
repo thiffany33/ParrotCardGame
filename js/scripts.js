@@ -113,10 +113,30 @@ function selectedCard(index) {
         console.log("primeiro");
         cardselected1 = document.getElementById(index);
         cardselected1.classList.add("selected");
+        index1 = index
     } else {
         console.log("segundo");
         cardselected2 = document.getElementById(index);
         cardselected2.classList.add("selected");
+        index2 = index
+        checkCard(index1, index2);
     }
     console.log(cardselected1, cardselected2);
+}
+
+function checkCard(index1, index2) {
+    if (cardsConcat[index1].id == cardsConcat[index2].id) {
+        console.log("acertou");
+
+    } else {
+        console.log("errou");
+        setTimeout(resetCardsSelectedsErro, 1000);
+    }
+}
+
+function resetCardsSelectedsErro() {
+    cardselected1.classList.remove("selected");
+    cardselected2.classList.remove("selected");
+    cardselected1 = undefined;
+    cardselected2 = undefined;
 }
