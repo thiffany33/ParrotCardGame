@@ -3,6 +3,7 @@ getNumber();
 let numberCards;
 
 
+
 function getNumber() {
     numero = prompt("digite um numero par de 4 ate 14");
 
@@ -27,10 +28,43 @@ function getNumber() {
 function generatedCards(numCards) {
     const cards = document.getElementById("cards");
 
-    for (var i = 0; i < numCards; i++) {
+    let items = [{
+            id: 1,
+            imageUrl: "/assets/gifs/bobrossparrot.gif",
+        },
+        {
+            id: 2,
+            imageUrl: "/assets/gifs/explodyparrot.gif",
+        },
+        {
+            id: 3,
+            imageUrl: "/assets/gifs/fiestaparrot.gif",
+        },
+        {
+            id: 4,
+            imageUrl: "/assets/gifs/metalparrot.gif",
+        },
+        {
+            id: 5,
+            imageUrl: "/assets/gifs/revertparrot.gif",
+        },
+        {
+            id: 6,
+            imageUrl: "/assets/gifs/tripletsparrot.gif",
+        },
+        {
+            id: 7,
+            imageUrl: "/assets/gifs/unicornparrot.gif",
+        },
+    ];
+
+    for (var i = 1; i < numCards + 1; i++) {
+
+        cardPic = items.find((item) => item.id === i);
+        console.log(cardPic);
         cards.innerHTML += `
         <div class="contentCards">
-            <img src="assets/images/front.png" alt="">
+            <img src="${cardPic.imageUrl}" alt="">
             <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
         </div>
     `;
