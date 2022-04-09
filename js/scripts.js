@@ -1,8 +1,6 @@
-// getNumber();
+getNumber();
 
 let numberCards;
-
-
 
 function getNumber() {
     numero = prompt("digite um numero par de 4 ate 14");
@@ -62,7 +60,7 @@ function generatedCards(numCards) {
     let collectionCards = [];
 
     for (let i = 0; i < numCards / 2; i++) {
-        collectionCards[i] = items[i]
+        collectionCards[i] = items[i];
     }
 
     var cardsConcat = collectionCards.concat(collectionCards);
@@ -71,20 +69,32 @@ function generatedCards(numCards) {
 
     for (let i = 0; i < cardsConcat.length / 2; i++) {
         row1.innerHTML += `
-          <div class="contentCards">
-              <img src="${cardsConcat[i].imageUrl}" alt="">
-              <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
-          </div>
-        `
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="assets/images/front.png" alt="">
+                </div>
+                <div class="flip-card-back">
+                    <img src=${cardsConcat[i].imageUrl}f" alt="">
+                </div>
+            </div>
+        </div>
+        `;
     }
 
     for (let i = cardsConcat.length / 2; i < cardsConcat.length; i++) {
         row2.innerHTML += `
-          <div class="contentCards">
-              <img src="${cardsConcat[i].imageUrl}" alt="">
-              <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
-          </div>
-        `
+        <div class="flip-card">
+             <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="assets/images/front.png" alt="">
+                </div>
+                <div class="flip-card-back">
+                    <img src=${cardsConcat[i].imageUrl}f" alt="">
+                </div>
+            </div>
+         </div>
+        `;
     }
 }
 
