@@ -121,7 +121,6 @@ function selectedCard(index) {
         index2 = index
         checkCard(index1, index2);
     }
-    console.log(cardselected1, cardselected2);
 }
 
 function checkCard(index1, index2) {
