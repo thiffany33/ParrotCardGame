@@ -153,6 +153,7 @@ function winGame() {
             seconds +
             " segundos para concluir!"
         );
+        restartGame();
     }
 }
 
@@ -162,4 +163,18 @@ function startTime() {
         showSeconds.innerHTML = seconds;
         seconds++;
     }, 1000);
+}
+
+function restartGame() {
+    var res = prompt("Gostaria de jogar novamente ? responda com 'sim' ou 'não'! ");
+
+    if (res === "sim") {
+        alert("Certo o jogo ira reiniciar em breve");
+        location.reload();
+    } else if (res === "não") {
+        alert("Certo obrigado por jogar!");
+    } else {
+        alert("Não entendi poderia repetir ?");
+        restartGame();
+    }
 }
