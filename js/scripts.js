@@ -32,8 +32,10 @@ let items = [{
 
 var cardsConcat = [];
 
-getNumber();
+var cardselected1;
+var cardselected2;
 
+getNumber();
 
 function getNumber() {
     numero = prompt("digite um numero par de 4 ate 14");
@@ -58,8 +60,6 @@ function getNumber() {
 function generatedCards(numCards) {
     const row1 = document.getElementById("row1");
     const row2 = document.getElementById("row2");
-
-
 
     let collectionCards = [];
 
@@ -104,15 +104,19 @@ function generatedCards(numCards) {
     }
 }
 
-
 function comparador() {
     return Math.random() - 0.5;
 }
 
 function selectedCard(index) {
-
-    var cardselected1 = document.getElementById(index);
-    var cardselected2 = document.getElementById(index);
-
-    cardselected1.classList.add("selected");
+    if (cardselected1 == null) {
+        console.log("primeiro");
+        cardselected1 = document.getElementById(index);
+        cardselected1.classList.add("selected");
+    } else {
+        console.log("segundo");
+        cardselected2 = document.getElementById(index);
+        cardselected2.classList.add("selected");
+    }
+    console.log(cardselected1, cardselected2);
 }
