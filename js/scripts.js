@@ -66,15 +66,13 @@ function generatedCards(numCards) {
 
     var cardsConcat = collectionCards.concat(collectionCards);
 
-
     cardsConcat.sort(comparador);
 
-    for (var i = 1; i < numCards + 1; i++) {
+    for (var i = 0; i < numCards; i++) {
 
-        cardPic = cardsConcat.find((item) => item.id === i);
         cards.innerHTML += `
         <div class="contentCards">
-            <img src="${cardPic.imageUrl}" alt="">
+            <img src="${cardsConcat[i].imageUrl}" alt="">
             <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
         </div>
     `;
