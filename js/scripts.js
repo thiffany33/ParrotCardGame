@@ -1,4 +1,4 @@
-getNumber();
+// getNumber();
 
 let numberCards;
 

@@ -36,22 +36,59 @@ h1 {
     height: auto;
 }
 
-.contentCards {
+.flip-card {
+    background-color: transparent;
+    width: 117px;
+    height: 146px;
+    margin: 34px;
+}
+
+.flip-card-inner {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--green-200);
-    width: 117px;
-    height: 146px;
-    margin: 34px;
+    position: relative;
+    width: 100%;
+    height: 100%;
     border: 1px solid var(--green-300);
     border-radius: 5px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
-.contentCards img {
+.flip-card-inner img {
     width: 100px;
     height: 100px;
-    background-color: transparent;
+    background-color: var(--green-200);
+}
+
+.selected .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-200);
+}
+
+.flip-card-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-200);
+    transform: rotateY(180deg);
 }
 
 .row1 {
