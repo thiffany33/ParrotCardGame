@@ -32,7 +32,7 @@ let items = [{
 ];
 var cardsLimit;
 var cardsConcat = [];
-
+var seconds = 0;
 var cardselected1;
 var cardselected2;
 
@@ -104,6 +104,8 @@ function generatedCards(numCards) {
          </div>
         `;
     }
+
+    startTime();
 }
 
 function comparador() {
@@ -115,11 +117,11 @@ function selectedCard(index) {
     if (cardselected1 == null) {
         cardselected1 = document.getElementById(index);
         cardselected1.classList.add("selected");
-        index1 = index
+        index1 = index;
     } else {
         cardselected2 = document.getElementById(index);
         cardselected2.classList.add("selected");
-        index2 = index
+        index2 = index;
         checkCard(index1, index2);
     }
 }
@@ -144,6 +146,20 @@ function resetCardsSelectedsErro() {
 function winGame() {
     acertos++;
     if (acertos == cardsLimit / 2) {
-        alert("Você ganhou em " + jogadas + " jogadas!");
+        alert(
+            "Você ganhou em " +
+            jogadas +
+            " jogadas levando " +
+            seconds +
+            " segundos para concluir!"
+        );
     }
+}
+
+function startTime() {
+    var showSeconds = document.getElementById("timer");
+    window.setInterval(function() {
+        showSeconds.innerHTML = seconds;
+        seconds++;
+    }, 1000);
 }

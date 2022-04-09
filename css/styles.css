@@ -109,3 +109,13 @@ h1 {
         flex-direction: column;
     }
 }
+
+.timer {
+    display: flex;
+    margin-left: auto;
+    margin-top: 12px;
+    margin-right: 12px;
+    font-size: 30px;
+    font-family: Roboto;
+    color: var(--green-400);
+}
