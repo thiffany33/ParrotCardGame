@@ -1,6 +1,39 @@
+var teste = [];
+
+let items = [{
+        id: 1,
+        imageUrl: "/assets/gifs/bobrossparrot.gif",
+    },
+    {
+        id: 2,
+        imageUrl: "/assets/gifs/explodyparrot.gif",
+    },
+    {
+        id: 3,
+        imageUrl: "/assets/gifs/fiestaparrot.gif",
+    },
+    {
+        id: 4,
+        imageUrl: "/assets/gifs/metalparrot.gif",
+    },
+    {
+        id: 5,
+        imageUrl: "/assets/gifs/revertitparrot.gif",
+    },
+    {
+        id: 6,
+        imageUrl: "/assets/gifs/tripletsparrot.gif",
+    },
+    {
+        id: 7,
+        imageUrl: "/assets/gifs/unicornparrot.gif",
+    },
+];
+
+var cardsConcat = [];
+
 getNumber();
 
-let numberCards;
 
 function getNumber() {
     numero = prompt("digite um numero par de 4 ate 14");
@@ -11,15 +44,14 @@ function getNumber() {
         alert("Numero invalido");
         alert("Insira um numero valido !");
         getNumber();
-    }
-
-    if (numero > 14 || numero <= 3) {
+    } else if (numero > 14 || numero <= 3) {
         alert("Insira um numero maior que 4 menor que 14");
         getNumber();
-    }
-
-    if (numero % 2 == 0) {
+    } else if (numero % 2 == 0) {
         generatedCards(numero);
+    } else {
+        alert("Insira um numero par");
+        getNumber();
     }
 }
 
@@ -27,35 +59,7 @@ function generatedCards(numCards) {
     const row1 = document.getElementById("row1");
     const row2 = document.getElementById("row2");
 
-    let items = [{
-            id: 1,
-            imageUrl: "/assets/gifs/bobrossparrot.gif",
-        },
-        {
-            id: 2,
-            imageUrl: "/assets/gifs/explodyparrot.gif",
-        },
-        {
-            id: 3,
-            imageUrl: "/assets/gifs/fiestaparrot.gif",
-        },
-        {
-            id: 4,
-            imageUrl: "/assets/gifs/metalparrot.gif",
-        },
-        {
-            id: 5,
-            imageUrl: "/assets/gifs/revertitparrot.gif",
-        },
-        {
-            id: 6,
-            imageUrl: "/assets/gifs/tripletsparrot.gif",
-        },
-        {
-            id: 7,
-            imageUrl: "/assets/gifs/unicornparrot.gif",
-        },
-    ];
+
 
     let collectionCards = [];
 
@@ -63,19 +67,21 @@ function generatedCards(numCards) {
         collectionCards[i] = items[i];
     }
 
-    var cardsConcat = collectionCards.concat(collectionCards);
+    cardsConcat = collectionCards.concat(collectionCards);
 
     cardsConcat.sort(comparador);
 
+    teste = cardsConcat;
+
     for (let i = 0; i < cardsConcat.length / 2; i++) {
         row1.innerHTML += `
-        <div class="flip-card">
+        <div id="${i}" class="flip-card">
             <div class="flip-card-inner">
-                <div class="flip-card-front">
+                <div onclick="selectedCard(${i})" class="flip-card-front">
                     <img src="assets/images/front.png" alt="">
                 </div>
                 <div class="flip-card-back">
-                    <img src=${cardsConcat[i].imageUrl}f" alt="">
+                    <img src="${cardsConcat[i].imageUrl}" alt="">
                 </div>
             </div>
         </div>
@@ -84,13 +90,13 @@ function generatedCards(numCards) {
 
     for (let i = cardsConcat.length / 2; i < cardsConcat.length; i++) {
         row2.innerHTML += `
-        <div class="flip-card">
-             <div class="flip-card-inner">
-                <div class="flip-card-front">
+        <div id="${i}" class="flip-card">
+             <div  class="flip-card-inner">
+                <div onclick="selectedCard(${i})" class="flip-card-front">
                     <img src="assets/images/front.png" alt="">
                 </div>
                 <div class="flip-card-back">
-                    <img src=${cardsConcat[i].imageUrl}f" alt="">
+                    <img src="${cardsConcat[i].imageUrl}" alt="">
                 </div>
             </div>
          </div>
@@ -98,6 +104,15 @@ function generatedCards(numCards) {
     }
 }
 
+
 function comparador() {
     return Math.random() - 0.5;
+}
+
+function selectedCard(index) {
+
+    var cardselected1 = document.getElementById(index);
+    var cardselected2 = document.getElementById(index);
+
+    cardselected1.classList.add("selected");
 }

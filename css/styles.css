@@ -101,6 +101,14 @@ h1 {
     flex-direction: row;
 }
 
+.reed {
+    border: 1px solid red;
+}
+
+.bluue {
+    border: 1px solid blue;
+}
+
 @media (max-width: 768px) {
     .row1 {
         flex-direction: column;
