@@ -1,6 +1,5 @@
-var teste = [];
 var acertos = 0;
-var jogadas = 0;
+var plays = 0;
 let items = [{
         id: 1,
         imageUrl: "/assets/gifs/bobrossparrot.gif",
@@ -73,8 +72,6 @@ function generatedCards(numCards) {
 
     cardsConcat.sort(comparador);
 
-    teste = cardsConcat;
-
     for (let i = 0; i < cardsConcat.length / 2; i++) {
         row1.innerHTML += `
         <div id="${i}" class="flip-card">
@@ -113,7 +110,7 @@ function comparador() {
 }
 
 function selectedCard(index) {
-    jogadas++;
+    plays++;
     if (cardselected1 == null) {
         cardselected1 = document.getElementById(index);
         cardselected1.classList.add("selected");
@@ -148,7 +145,7 @@ function winGame() {
     if (acertos == cardsLimit / 2) {
         alert(
             "Você ganhou em " +
-            jogadas +
+            plays +
             " jogadas levando " +
             seconds +
             " segundos para concluir!"
@@ -166,8 +163,9 @@ function startTime() {
 }
 
 function restartGame() {
-    var res = prompt("Gostaria de jogar novamente ? responda com 'sim' ou 'não'! ");
-
+    var res = prompt(
+        "Gostaria de jogar novamente ? responda com 'sim' ou 'não'! "
+    );
     if (res === "sim") {
         alert("Certo o jogo ira reiniciar em breve");
         location.reload();
