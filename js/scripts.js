@@ -46,7 +46,7 @@ function generatedCards(numCards) {
         },
         {
             id: 5,
-            imageUrl: "/assets/gifs/revertparrot.gif",
+            imageUrl: "/assets/gifs/revertitparrot.gif",
         },
         {
             id: 6,
@@ -58,10 +58,20 @@ function generatedCards(numCards) {
         },
     ];
 
+    let collectionCards = [];
+
+    for (let i = 0; i < numCards / 2; i++) {
+        collectionCards[i] = items[i]
+    }
+
+    var cardsConcat = collectionCards.concat(collectionCards);
+
+
+    cardsConcat.sort(comparador);
+
     for (var i = 1; i < numCards + 1; i++) {
 
-        cardPic = items.find((item) => item.id === i);
-        console.log(cardPic);
+        cardPic = cardsConcat.find((item) => item.id === i);
         cards.innerHTML += `
         <div class="contentCards">
             <img src="${cardPic.imageUrl}" alt="">
@@ -69,4 +79,8 @@ function generatedCards(numCards) {
         </div>
     `;
     }
+}
+
+function comparador() {
+    return Math.random() - 0.5;
 }
