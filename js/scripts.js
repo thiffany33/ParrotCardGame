@@ -26,7 +26,8 @@ function getNumber() {
 }
 
 function generatedCards(numCards) {
-    const cards = document.getElementById("cards");
+    const row1 = document.getElementById("row1");
+    const row2 = document.getElementById("row2");
 
     let items = [{
             id: 1,
@@ -68,14 +69,22 @@ function generatedCards(numCards) {
 
     cardsConcat.sort(comparador);
 
-    for (var i = 0; i < numCards; i++) {
+    for (let i = 0; i < cardsConcat.length / 2; i++) {
+        row1.innerHTML += `
+          <div class="contentCards">
+              <img src="${cardsConcat[i].imageUrl}" alt="">
+              <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
+          </div>
+        `
+    }
 
-        cards.innerHTML += `
-        <div class="contentCards">
-            <img src="${cardsConcat[i].imageUrl}" alt="">
-            <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
-        </div>
-    `;
+    for (let i = cardsConcat.length / 2; i < cardsConcat.length; i++) {
+        row2.innerHTML += `
+          <div class="contentCards">
+              <img src="${cardsConcat[i].imageUrl}" alt="">
+              <!-- <img src="assets/gifs/bobrossparrot.gif" alt=""> -->
+          </div>
+        `
     }
 }
 
