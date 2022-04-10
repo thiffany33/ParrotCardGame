@@ -2,8 +2,7 @@
 Um jogo de memoria com tema de passarinho com gifs.
 
 ## Demonstração
-
-"C:\Projects\Projeto04_parrotsCardGame\readme\images\animacao.gif"
+<img src=".\Projects\Projeto04_parrotsCardGame\readme\images\animacao.gif">
 
 ## Tecnologias Usadas
 
