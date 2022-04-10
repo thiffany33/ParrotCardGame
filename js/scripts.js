@@ -2,31 +2,31 @@ var acertos = 0;
 var plays = 0;
 let items = [{
         id: 1,
-        imageUrl: "/assets/gifs/bobrossparrot.gif",
+        imageUrl: "./assets/gifs/bobrossparrot.gif",
     },
     {
         id: 2,
-        imageUrl: "/assets/gifs/explodyparrot.gif",
+        imageUrl: "./assets/gifs/explodyparrot.gif",
     },
     {
         id: 3,
-        imageUrl: "/assets/gifs/fiestaparrot.gif",
+        imageUrl: "./assets/gifs/fiestaparrot.gif",
     },
     {
         id: 4,
-        imageUrl: "/assets/gifs/metalparrot.gif",
+        imageUrl: "./assets/gifs/metalparrot.gif",
     },
     {
         id: 5,
-        imageUrl: "/assets/gifs/revertitparrot.gif",
+        imageUrl: "./assets/gifs/revertitparrot.gif",
     },
     {
         id: 6,
-        imageUrl: "/assets/gifs/tripletsparrot.gif",
+        imageUrl: "./assets/gifs/tripletsparrot.gif",
     },
     {
         id: 7,
-        imageUrl: "/assets/gifs/unicornparrot.gif",
+        imageUrl: "./assets/gifs/unicornparrot.gif",
     },
 ];
 var cardsLimit;
@@ -77,7 +77,7 @@ function generatedCards(numCards) {
         <div id="${i}" class="flip-card">
             <div class="flip-card-inner">
                 <div onclick="selectedCard(${i})" class="flip-card-front">
-                    <img src="assets/images/front.png" alt="">
+                    <img src="./assets/images/front.png" alt="">
                 </div>
                 <div class="flip-card-back">
                     <img src="${cardsConcat[i].imageUrl}" alt="">
@@ -92,7 +92,7 @@ function generatedCards(numCards) {
         <div id="${i}" class="flip-card">
              <div  class="flip-card-inner">
                 <div onclick="selectedCard(${i})" class="flip-card-front">
-                    <img src="assets/images/front.png" alt="">
+                    <img src="./assets/images/front.png" alt="">
                 </div>
                 <div class="flip-card-back">
                     <img src="${cardsConcat[i].imageUrl}" alt="">
